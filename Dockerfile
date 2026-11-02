@@ -9,7 +9,7 @@ COPY package.json yarn.lock* ./
 
 # Install project dependencies with frozen lockfile for reproducible builds
 RUN --mount=type=cache,target=/usr/local/share/.cache/yarn \
-    corepack enable yarn; yarn install --frozen-lockfile --production=false;
+    corepack enable yarn && yarn install --frozen-lockfile --production=false;
 
 FROM node:${NODE_VERSION} AS builder
 
@@ -27,7 +27,7 @@ ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 
 RUN --mount=type=cache,target=/app/.next/cache \
-    corepack enable yarn; yarn build;
+    corepack enable yarn && yarn build;
 
 # ============================================
 # Stage 3: Run Next.js application
