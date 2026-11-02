@@ -1,4 +1,4 @@
-ARG NODE_VERSION = 24.22-slim
+ARG NODE_VERSION=24.22-slim
 
 FROM node:${NODE_VERSION} AS dependencies
 
