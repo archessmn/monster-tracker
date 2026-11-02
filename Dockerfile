@@ -5,7 +5,7 @@ FROM node:${NODE_VERSION} AS dependencies
 WORKDIR /app
 
 # Copy package-related files first to leverage Docker's caching mechanism
-COPY package.json yarn.lock* ./
+COPY package.json yarn.lock* .yarnrc.yml ./
 COPY .yarn/releases/ ./.yarn/releases/
 
 # Install project dependencies with frozen lockfile for reproducible builds
