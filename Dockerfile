@@ -28,7 +28,7 @@ ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 
 RUN --mount=type=cache,target=/app/.next/cache \
-    yarn build;
+    SKIP_ENV_VALIDATION=1 yarn build;
 
 # ============================================
 # Stage 3: Run Next.js application
