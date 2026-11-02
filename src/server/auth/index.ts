@@ -1,4 +1,5 @@
 import { betterAuth } from "better-auth";
+import { admin } from "better-auth/plugins";
 import { apiKey } from "@better-auth/api-key";
 import { prismaAdapter } from "better-auth/adapters/prisma";
 import { db } from "@/db";
@@ -14,5 +15,5 @@ export const auth = betterAuth({
       clientSecret: env.BETTER_AUTH_GITHUB_SECRET!,
     },
   },
-  plugins: [apiKey()],
+  plugins: [admin(), apiKey()],
 });

@@ -1392,6 +1392,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@mantine/form@npm:^9.7.4":
+  version: 9.7.4
+  resolution: "@mantine/form@npm:9.7.4"
+  dependencies:
+    "@standard-schema/spec": "npm:^1.1.0"
+    fast-deep-equal: "npm:^3.1.3"
+    klona: "npm:^2.0.6"
+  peerDependencies:
+    react: ^19.2.0
+  checksum: 10c0/0d4f7426a2f7d59edd697a6be38ee764219eecd705fd9fc21a68b17e359bf1d6f73c1f7cb4ed639ad8396e9feef8ac19b1e2a1bf2d266db484b63e85aa8ef61b
+  languageName: node
+  linkType: hard
+
 "@mantine/hooks@npm:^9.7.4":
   version: 9.7.4
   resolution: "@mantine/hooks@npm:9.7.4"
@@ -5575,6 +5588,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"klona@npm:^2.0.6":
+  version: 2.0.6
+  resolution: "klona@npm:2.0.6"
+  checksum: 10c0/94eed2c6c2ce99f409df9186a96340558897b3e62a85afdc1ee39103954d2ebe1c1c4e9fe2b0952771771fa96d70055ede8b27962a7021406374fdb695fd4d01
+  languageName: node
+  linkType: hard
+
 "kysely@npm:^0.28.17 || ^0.29.0":
   version: 0.29.7
   resolution: "kysely@npm:0.29.7"
@@ -5856,6 +5876,7 @@ __metadata:
   dependencies:
     "@better-auth/api-key": "npm:^1.7.14"
     "@mantine/core": "npm:^9.7.4"
+    "@mantine/form": "npm:^9.7.4"
     "@mantine/hooks": "npm:^9.7.4"
     "@mantine/notifications": "npm:^9.7.4"
     "@prisma/adapter-pg": "npm:^7.10.1"

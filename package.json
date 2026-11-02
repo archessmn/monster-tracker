@@ -8,11 +8,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "contract:emit": "prisma contract emit"
+    "auth:generateDB": "auth generate --config src/server/auth/index.ts --output prisma/schema/auth.prisma"
   },
   "dependencies": {
     "@better-auth/api-key": "^1.7.14",
     "@mantine/core": "^9.7.4",
+    "@mantine/form": "^9.7.4",
     "@mantine/hooks": "^9.7.4",
     "@mantine/notifications": "^9.7.4",
     "@prisma/adapter-pg": "^7.10.1",

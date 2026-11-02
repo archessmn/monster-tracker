@@ -61,6 +61,12 @@ export function AppLayout(props: { children: ReactNode }) {
             href={"/account/settings"}
             label={"Profile"}
           />
+          <NavLink
+            active={pathname === "/admin"}
+            component={Link}
+            href={"/admin"}
+            label={"Admin"}
+          />
           {!session.data?.session ? (
             <Button
               mt={"auto"}

@@ -401,7 +401,9 @@ export const ModelName = {
   Session: 'Session',
   Account: 'Account',
   Verification: 'Verification',
-  Apikey: 'Apikey'
+  Apikey: 'Apikey',
+  DrinkBrand: 'DrinkBrand',
+  DrinkType: 'DrinkType'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -417,7 +419,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "session" | "account" | "verification" | "apikey"
+    modelProps: "user" | "session" | "account" | "verification" | "apikey" | "drinkBrand" | "drinkType"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -791,6 +793,154 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    DrinkBrand: {
+      payload: Prisma.$DrinkBrandPayload<ExtArgs>
+      fields: Prisma.DrinkBrandFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.DrinkBrandFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DrinkBrandPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.DrinkBrandFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DrinkBrandPayload>
+        }
+        findFirst: {
+          args: Prisma.DrinkBrandFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DrinkBrandPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.DrinkBrandFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DrinkBrandPayload>
+        }
+        findMany: {
+          args: Prisma.DrinkBrandFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DrinkBrandPayload>[]
+        }
+        create: {
+          args: Prisma.DrinkBrandCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DrinkBrandPayload>
+        }
+        createMany: {
+          args: Prisma.DrinkBrandCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.DrinkBrandCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DrinkBrandPayload>[]
+        }
+        delete: {
+          args: Prisma.DrinkBrandDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DrinkBrandPayload>
+        }
+        update: {
+          args: Prisma.DrinkBrandUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DrinkBrandPayload>
+        }
+        deleteMany: {
+          args: Prisma.DrinkBrandDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.DrinkBrandUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.DrinkBrandUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DrinkBrandPayload>[]
+        }
+        upsert: {
+          args: Prisma.DrinkBrandUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DrinkBrandPayload>
+        }
+        aggregate: {
+          args: Prisma.DrinkBrandAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateDrinkBrand>
+        }
+        groupBy: {
+          args: Prisma.DrinkBrandGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.DrinkBrandGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.DrinkBrandCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.DrinkBrandCountAggregateOutputType> | number
+        }
+      }
+    }
+    DrinkType: {
+      payload: Prisma.$DrinkTypePayload<ExtArgs>
+      fields: Prisma.DrinkTypeFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.DrinkTypeFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DrinkTypePayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.DrinkTypeFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DrinkTypePayload>
+        }
+        findFirst: {
+          args: Prisma.DrinkTypeFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DrinkTypePayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.DrinkTypeFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DrinkTypePayload>
+        }
+        findMany: {
+          args: Prisma.DrinkTypeFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DrinkTypePayload>[]
+        }
+        create: {
+          args: Prisma.DrinkTypeCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DrinkTypePayload>
+        }
+        createMany: {
+          args: Prisma.DrinkTypeCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.DrinkTypeCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DrinkTypePayload>[]
+        }
+        delete: {
+          args: Prisma.DrinkTypeDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DrinkTypePayload>
+        }
+        update: {
+          args: Prisma.DrinkTypeUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DrinkTypePayload>
+        }
+        deleteMany: {
+          args: Prisma.DrinkTypeDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.DrinkTypeUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.DrinkTypeUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DrinkTypePayload>[]
+        }
+        upsert: {
+          args: Prisma.DrinkTypeUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DrinkTypePayload>
+        }
+        aggregate: {
+          args: Prisma.DrinkTypeAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateDrinkType>
+        }
+        groupBy: {
+          args: Prisma.DrinkTypeGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.DrinkTypeGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.DrinkTypeCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.DrinkTypeCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -837,7 +987,11 @@ export const UserScalarFieldEnum = {
   emailVerified: 'emailVerified',
   image: 'image',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  updatedAt: 'updatedAt',
+  role: 'role',
+  banned: 'banned',
+  banReason: 'banReason',
+  banExpires: 'banExpires'
 } as const
 
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
@@ -851,7 +1005,8 @@ export const SessionScalarFieldEnum = {
   updatedAt: 'updatedAt',
   ipAddress: 'ipAddress',
   userAgent: 'userAgent',
-  userId: 'userId'
+  userId: 'userId',
+  impersonatedBy: 'impersonatedBy'
 } as const
 
 export type SessionScalarFieldEnum = (typeof SessionScalarFieldEnum)[keyof typeof SessionScalarFieldEnum]
@@ -914,6 +1069,30 @@ export const ApikeyScalarFieldEnum = {
 } as const
 
 export type ApikeyScalarFieldEnum = (typeof ApikeyScalarFieldEnum)[keyof typeof ApikeyScalarFieldEnum]
+
+
+export const DrinkBrandScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  slug: 'slug',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type DrinkBrandScalarFieldEnum = (typeof DrinkBrandScalarFieldEnum)[keyof typeof DrinkBrandScalarFieldEnum]
+
+
+export const DrinkTypeScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  caffeine_100ml: 'caffeine_100ml',
+  total_ml: 'total_ml',
+  brand_id: 'brand_id',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type DrinkTypeScalarFieldEnum = (typeof DrinkTypeScalarFieldEnum)[keyof typeof DrinkTypeScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -1164,6 +1343,8 @@ export type GlobalOmitConfig = {
   account?: Prisma.AccountOmit
   verification?: Prisma.VerificationOmit
   apikey?: Prisma.ApikeyOmit
+  drinkBrand?: Prisma.DrinkBrandOmit
+  drinkType?: Prisma.DrinkTypeOmit
 }
 
 /* Types for Logging */

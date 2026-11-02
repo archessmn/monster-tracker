@@ -4,10 +4,8 @@ import "@mantine/core/styles.css";
 import "@mantine/notifications/styles.css";
 
 import {
-  Card,
   ColorSchemeScript,
   MantineProvider,
-  createTheme,
   mantineHtmlProps,
 } from "@mantine/core";
 import { Notifications } from "@mantine/notifications";

@@ -55,7 +55,9 @@ export const ModelName = {
   Session: 'Session',
   Account: 'Account',
   Verification: 'Verification',
-  Apikey: 'Apikey'
+  Apikey: 'Apikey',
+  DrinkBrand: 'DrinkBrand',
+  DrinkType: 'DrinkType'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -81,7 +83,11 @@ export const UserScalarFieldEnum = {
   emailVerified: 'emailVerified',
   image: 'image',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  updatedAt: 'updatedAt',
+  role: 'role',
+  banned: 'banned',
+  banReason: 'banReason',
+  banExpires: 'banExpires'
 } as const
 
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
@@ -95,7 +101,8 @@ export const SessionScalarFieldEnum = {
   updatedAt: 'updatedAt',
   ipAddress: 'ipAddress',
   userAgent: 'userAgent',
-  userId: 'userId'
+  userId: 'userId',
+  impersonatedBy: 'impersonatedBy'
 } as const
 
 export type SessionScalarFieldEnum = (typeof SessionScalarFieldEnum)[keyof typeof SessionScalarFieldEnum]
@@ -158,6 +165,30 @@ export const ApikeyScalarFieldEnum = {
 } as const
 
 export type ApikeyScalarFieldEnum = (typeof ApikeyScalarFieldEnum)[keyof typeof ApikeyScalarFieldEnum]
+
+
+export const DrinkBrandScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  slug: 'slug',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type DrinkBrandScalarFieldEnum = (typeof DrinkBrandScalarFieldEnum)[keyof typeof DrinkBrandScalarFieldEnum]
+
+
+export const DrinkTypeScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  caffeine_100ml: 'caffeine_100ml',
+  total_ml: 'total_ml',
+  brand_id: 'brand_id',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type DrinkTypeScalarFieldEnum = (typeof DrinkTypeScalarFieldEnum)[keyof typeof DrinkTypeScalarFieldEnum]
 
 
 export const SortOrder = {

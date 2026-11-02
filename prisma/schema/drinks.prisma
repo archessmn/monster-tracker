@@ -1,0 +1,28 @@
+model DrinkBrand {
+  id   String @id @default(cuid(2))
+  name String
+  slug String @unique
+
+  types DrinkType[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt()
+
+  @@map("drink_brands")
+}
+
+model DrinkType {
+  id   String @id @default(cuid(2))
+  name String
+
+  caffeine_100ml Int
+  total_ml       Int
+
+  brand_id String
+  brand    DrinkBrand @relation(fields: [brand_id], references: [id])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt()
+
+  @@map("drink_types")
+}
