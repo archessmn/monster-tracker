@@ -1,8 +1,9 @@
 "use client";
 
-import { DrinkBrand, DrinkType } from "@/db/generated/prisma/client";
 import { Table } from "@mantine/core";
 import Link from "next/link";
+
+import { type DrinkBrand, type DrinkType } from "@/db/generated/prisma/client";
 
 export default function DrinkTypesTable(props: {
   types: (DrinkType & { brand?: DrinkBrand })[];

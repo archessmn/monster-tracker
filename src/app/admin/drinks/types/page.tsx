@@ -1,8 +1,5 @@
 "use client";
 
-import DrinkBrandField from "@/app/_components/form/fields/drink-brand";
-import DrinkTypesTable from "@/app/_components/types-table";
-import { api } from "@/trpc/react";
 import {
   Alert,
   Button,
@@ -10,15 +7,17 @@ import {
   Modal,
   NumberInput,
   Stack,
-  Table,
   TextInput,
   Title,
 } from "@mantine/core";
 import { useForm, schemaResolver } from "@mantine/form";
 import { useDisclosure } from "@mantine/hooks";
-import Link from "next/link";
 import { useState } from "react";
 import z from "zod";
+
+import DrinkBrandField from "@/app/_components/form/fields/drink-brand";
+import DrinkTypesTable from "@/app/_components/types-table";
+import { api } from "@/trpc/react";
 
 export default function DrinkTypesPage() {
   const types = api.drinkTypes.listAdmin.useQuery();
@@ -58,7 +57,7 @@ function CreateDrinkTypeForm(props: {
   onClose: () => void;
   onSuccess: () => void;
 }) {
-  const [formError, setFormError] = useState<string>();
+  const [formError, _setFormError] = useState<string>();
 
   const createDrinkType = api.drinkTypes.create.useMutation().mutateAsync;
 

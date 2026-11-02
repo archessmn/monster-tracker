@@ -1,12 +1,14 @@
 "use client";
 
-import { authClient } from "@/server/auth/client";
 import { AppShell, Burger, Button, Group, NavLink, Text } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { QueryClientProvider, useQueryClient } from "@tanstack/react-query";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
+
+import { authClient } from "@/server/auth/client";
+
 import { ColorSchemeToggle } from "./color-scheme-toggle";
 import { UserCard } from "./user-card";
 

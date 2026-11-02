@@ -1,9 +1,10 @@
 "use client";
 
-import DrinkTypesTable from "@/app/_components/types-table";
-import { api } from "@/trpc/react";
 import { Stack, Title } from "@mantine/core";
 import { use } from "react";
+
+import DrinkTypesTable from "@/app/_components/types-table";
+import { api } from "@/trpc/react";
 
 export default function DrinkBrandPage({
   params: paramsPromise,

@@ -1,8 +1,7 @@
+import { type NextRequest, NextResponse } from "next/server";
+
 import { db } from "@/db";
 import { auth } from "@/server/auth";
-import { NextApiRequest } from "next";
-import { headers } from "next/headers";
-import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
   const apiKey = req.headers.get("Authorization");
@@ -12,7 +11,7 @@ export async function POST(req: NextRequest) {
       { status: 400 },
     );
   }
-  const { valid, error, key } = await auth.api.verifyApiKey({
+  const { valid, key } = await auth.api.verifyApiKey({
     body: { key: apiKey },
   });
 

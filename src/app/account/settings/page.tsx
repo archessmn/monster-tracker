@@ -11,15 +11,16 @@ import {
   Title,
   Tooltip,
 } from "@mantine/core";
-import { UserCard } from "@/app/_components/user-card";
-import { api } from "@/trpc/react";
-import { authClient } from "@/server/auth/client";
+import { useClipboard } from "@mantine/hooks";
 import { notifications } from "@mantine/notifications";
 import dayjs from "dayjs";
 import { useState } from "react";
 import { FaRegClipboard } from "react-icons/fa";
 import { MdWarning } from "react-icons/md";
-import { useClipboard } from "@mantine/hooks";
+
+import { UserCard } from "@/app/_components/user-card";
+import { authClient } from "@/server/auth/client";
+import { api } from "@/trpc/react";
 
 export default function ProfilePage() {
   const apiKeys = api.apiKeys.list.useQuery();
@@ -101,7 +102,7 @@ export default function ProfilePage() {
                   <Table.Td>
                     <Button
                       onClick={async () => {
-                        const { data, error } = await authClient.apiKey.delete({
+                        const { error } = await authClient.apiKey.delete({
                           keyId: apiKey.id,
                         });
 

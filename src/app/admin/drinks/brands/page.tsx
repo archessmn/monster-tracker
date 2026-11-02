@@ -1,6 +1,5 @@
 "use client";
 
-import { api } from "@/trpc/react";
 import {
   Alert,
   Button,
@@ -15,6 +14,8 @@ import { useForm, schemaResolver } from "@mantine/form";
 import { useDisclosure } from "@mantine/hooks";
 import { useState } from "react";
 import z from "zod";
+
+import { api } from "@/trpc/react";
 
 export default function DrinkBrandsPage() {
   const brands = api.drinkBrands.list.useQuery();

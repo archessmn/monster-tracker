@@ -1,13 +1,7 @@
-import { z } from "zod";
-
-import {
-  createTRPCRouter,
-  protectedProcedure,
-  publicProcedure,
-} from "@/server/api/trpc";
+import { createTRPCRouter, publicProcedure } from "@/server/api/trpc";
 
 export const utilRouter = createTRPCRouter({
-  ping: publicProcedure.query(async ({ ctx, input }) => {
+  ping: publicProcedure.query(async () => {
     return { ok: true, msg: "pong" };
   }),
 });

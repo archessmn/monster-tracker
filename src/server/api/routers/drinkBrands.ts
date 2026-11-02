@@ -1,10 +1,11 @@
+import { PrismaClientKnownRequestError } from "@prisma/client/runtime/client";
+import z from "zod";
+
 import {
   adminProcedure,
   createTRPCRouter,
   protectedProcedure,
 } from "@/server/api/trpc";
-import { PrismaClientKnownRequestError } from "@prisma/client/runtime/client";
-import z from "zod";
 
 export const drinkBrandsRouter = createTRPCRouter({
   list: protectedProcedure.query(async ({ ctx }) => {

@@ -1,7 +1,8 @@
-import { api } from "@/trpc/react";
 import { Select } from "@mantine/core";
 import type { SelectProps } from "@mantine/core";
-import { GetInputPropsReturnType, useField } from "@mantine/form";
+import { type GetInputPropsReturnType } from "@mantine/form";
+
+import { api } from "@/trpc/react";
 
 export default function DrinkBrandField(
   props: {

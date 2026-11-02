@@ -1,16 +1,17 @@
 "use client";
 
-import { authClient } from "@/server/auth/client";
 import {
   Avatar,
   Card,
-  CardProps,
+  type CardProps,
   Group,
   Skeleton,
   Stack,
   Title,
 } from "@mantine/core";
 import { MdVerified } from "react-icons/md";
+
+import { authClient } from "@/server/auth/client";
 
 export function UserCard(props: CardProps & { variant?: "big" | "small" }) {
   const session = authClient.useSession();

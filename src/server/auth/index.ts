@@ -1,7 +1,8 @@
-import { betterAuth } from "better-auth";
-import { admin } from "better-auth/plugins";
 import { apiKey } from "@better-auth/api-key";
+import { betterAuth } from "better-auth";
 import { prismaAdapter } from "better-auth/adapters/prisma";
+import { admin } from "better-auth/plugins";
+
 import { db } from "@/db";
 import { env } from "@/env";
 

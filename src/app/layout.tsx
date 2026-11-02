@@ -1,16 +1,16 @@
-import type { Metadata } from "next";
-
 import "@mantine/core/styles.css";
 import "@mantine/notifications/styles.css";
-
 import {
   ColorSchemeScript,
   MantineProvider,
   mantineHtmlProps,
 } from "@mantine/core";
 import { Notifications } from "@mantine/notifications";
-import { AppLayout } from "./_components/app-shell";
+import type { Metadata } from "next";
+
 import { TRPCReactProvider } from "@/trpc/react";
+
+import { AppLayout } from "./_components/app-shell";
 import { theme } from "./theme";
 
 export const metadata: Metadata = {
