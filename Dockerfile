@@ -9,7 +9,7 @@ COPY package.json yarn.lock* ./
 
 # Install project dependencies with frozen lockfile for reproducible builds
 RUN --mount=type=cache,target=/usr/local/share/.cache/yarn \
-    corepack enable yarn && yarn install --frozen-lockfile --production=false;
+    corepack enable yarn && yarn install --frozen-lockfile;
 
 FROM node:${NODE_VERSION} AS builder
 
