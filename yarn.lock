@@ -1375,6 +1375,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@mantine/code-highlight@npm:^9.7.4":
+  version: 9.7.4
+  resolution: "@mantine/code-highlight@npm:9.7.4"
+  dependencies:
+    clsx: "npm:^2.1.1"
+  peerDependencies:
+    "@mantine/core": 9.7.4
+    "@mantine/hooks": 9.7.4
+    react: ^19.2.0
+    react-dom: ^19.2.0
+  checksum: 10c0/a70c0c9ca5144da860b48860c9a253806076435ca81dbb840962c7b74a260fb230f14bbae0f2fbe838250093c3ff2e7c77db2785e4947fc9355fe80502312179
+  languageName: node
+  linkType: hard
+
 "@mantine/core@npm:^9.7.4":
   version: 9.7.4
   resolution: "@mantine/core@npm:9.7.4"
@@ -3682,6 +3696,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"csv-parse@npm:^7.0.3":
+  version: 7.0.3
+  resolution: "csv-parse@npm:7.0.3"
+  checksum: 10c0/90d444df5bb14a5531fb87163be5236951a43092934c9ea10e1308cceefdd692c8c0b49f93c616a92a1c9695f371a376268bf45325bb88f60a1328274748cc25
+  languageName: node
+  linkType: hard
+
 "d3-array@npm:2 - 3, d3-array@npm:2.10.0 - 3, d3-array@npm:2.5.0 - 3, d3-array@npm:3.2.4":
   version: 3.2.4
   resolution: "d3-array@npm:3.2.4"
@@ -5888,6 +5909,7 @@ __metadata:
   resolution: "monster-tracker@workspace:."
   dependencies:
     "@better-auth/api-key": "npm:^1.7.14"
+    "@mantine/code-highlight": "npm:^9.7.4"
     "@mantine/core": "npm:^9.7.4"
     "@mantine/form": "npm:^9.7.4"
     "@mantine/hooks": "npm:^9.7.4"
@@ -5910,6 +5932,7 @@ __metadata:
     auth: "npm:^1.7.14"
     better-auth: "npm:^1.7.14"
     client-only: "npm:^0.0.1"
+    csv-parse: "npm:^7.0.3"
     dayjs: "npm:^1.11.23"
     dotenv: "npm:^18.0.9"
     eslint: "npm:^9"

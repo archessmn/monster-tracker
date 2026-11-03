@@ -56,6 +56,7 @@ export const ModelName = {
   Account: 'Account',
   Verification: 'Verification',
   Apikey: 'Apikey',
+  DrinkLog: 'DrinkLog',
   DrinkBrand: 'DrinkBrand',
   DrinkType: 'DrinkType'
 } as const
@@ -165,6 +166,20 @@ export const ApikeyScalarFieldEnum = {
 } as const
 
 export type ApikeyScalarFieldEnum = (typeof ApikeyScalarFieldEnum)[keyof typeof ApikeyScalarFieldEnum]
+
+
+export const DrinkLogScalarFieldEnum = {
+  id: 'id',
+  barcode: 'barcode',
+  datetime: 'datetime',
+  latitude: 'latitude',
+  longitude: 'longitude',
+  user_id: 'user_id',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type DrinkLogScalarFieldEnum = (typeof DrinkLogScalarFieldEnum)[keyof typeof DrinkLogScalarFieldEnum]
 
 
 export const DrinkBrandScalarFieldEnum = {

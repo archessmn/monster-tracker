@@ -12,6 +12,7 @@ import {
 } from "@mantine/core";
 import { useForm, schemaResolver } from "@mantine/form";
 import { useDisclosure } from "@mantine/hooks";
+import Link from "next/link";
 import { useState } from "react";
 import z from "zod";
 
@@ -39,9 +40,14 @@ export default function DrinkTypesPage() {
       />
       <Group>
         <Title>Drink Types</Title>
-        <Button ml={"auto"} onClick={openCreateModal}>
-          Create
+        <Button
+          ml={"auto"}
+          component={Link}
+          href={"/admin/drinks/types/import"}
+        >
+          Import
         </Button>
+        <Button onClick={openCreateModal}>Create</Button>
       </Group>
       {types.data && types.data.length > 0 ? (
         <DrinkTypesTable types={types.data} />

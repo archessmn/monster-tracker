@@ -9,6 +9,8 @@ model User {
   sessions      Session[]
   accounts      Account[]
 
+  drink_logs DrinkLog[]
+
   role       String?
   banned     Boolean?  @default(false)
   banReason  String?

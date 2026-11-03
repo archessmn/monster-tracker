@@ -43,6 +43,11 @@ export type Verification = Prisma.VerificationModel
  */
 export type Apikey = Prisma.ApikeyModel
 /**
+ * Model DrinkLog
+ * 
+ */
+export type DrinkLog = Prisma.DrinkLogModel
+/**
  * Model DrinkBrand
  * 
  */
