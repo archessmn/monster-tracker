@@ -51,4 +51,20 @@ export const drinkTypesRouter = createTRPCRouter({
         ok: true,
       };
     }),
+
+  readAdmin: adminProcedure
+    .input(z.object({ type_id: z.cuid2() }))
+    .query(async ({ ctx, input }) => {
+      const drinkType = await ctx.db.drinkType.findUnique({
+        where: {
+          id: input.type_id,
+        },
+        include: {
+          barcodes: true,
+          brand: true,
+        },
+      });
+
+      return drinkType;
+    }),
 });

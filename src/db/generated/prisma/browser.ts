@@ -57,3 +57,8 @@ export type DrinkBrand = Prisma.DrinkBrandModel
  * 
  */
 export type DrinkType = Prisma.DrinkTypeModel
+/**
+ * Model DrinkTypeBarcode
+ * 
+ */
+export type DrinkTypeBarcode = Prisma.DrinkTypeBarcodeModel

@@ -25,7 +25,11 @@ export default function DrinkTypesTable(props: {
           {props.types.map((type) => {
             return (
               <Table.Tr key={type.id}>
-                <Table.Td>{type.name}</Table.Td>
+                <Table.Td>
+                  <Link href={`/admin/drinks/types/${type.id}`}>
+                    {type.name}
+                  </Link>
+                </Table.Td>
                 {!props.hideBrand && (
                   <Table.Td>
                     <Link href={`/admin/drinks/brands/${type.brand!.id}`}>

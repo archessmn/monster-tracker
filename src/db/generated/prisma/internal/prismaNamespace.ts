@@ -404,7 +404,8 @@ export const ModelName = {
   Apikey: 'Apikey',
   DrinkLog: 'DrinkLog',
   DrinkBrand: 'DrinkBrand',
-  DrinkType: 'DrinkType'
+  DrinkType: 'DrinkType',
+  DrinkTypeBarcode: 'DrinkTypeBarcode'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -420,7 +421,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "session" | "account" | "verification" | "apikey" | "drinkLog" | "drinkBrand" | "drinkType"
+    modelProps: "user" | "session" | "account" | "verification" | "apikey" | "drinkLog" | "drinkBrand" | "drinkType" | "drinkTypeBarcode"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -1016,6 +1017,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    DrinkTypeBarcode: {
+      payload: Prisma.$DrinkTypeBarcodePayload<ExtArgs>
+      fields: Prisma.DrinkTypeBarcodeFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.DrinkTypeBarcodeFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DrinkTypeBarcodePayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.DrinkTypeBarcodeFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DrinkTypeBarcodePayload>
+        }
+        findFirst: {
+          args: Prisma.DrinkTypeBarcodeFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DrinkTypeBarcodePayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.DrinkTypeBarcodeFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DrinkTypeBarcodePayload>
+        }
+        findMany: {
+          args: Prisma.DrinkTypeBarcodeFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DrinkTypeBarcodePayload>[]
+        }
+        create: {
+          args: Prisma.DrinkTypeBarcodeCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DrinkTypeBarcodePayload>
+        }
+        createMany: {
+          args: Prisma.DrinkTypeBarcodeCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.DrinkTypeBarcodeCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DrinkTypeBarcodePayload>[]
+        }
+        delete: {
+          args: Prisma.DrinkTypeBarcodeDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DrinkTypeBarcodePayload>
+        }
+        update: {
+          args: Prisma.DrinkTypeBarcodeUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DrinkTypeBarcodePayload>
+        }
+        deleteMany: {
+          args: Prisma.DrinkTypeBarcodeDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.DrinkTypeBarcodeUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.DrinkTypeBarcodeUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DrinkTypeBarcodePayload>[]
+        }
+        upsert: {
+          args: Prisma.DrinkTypeBarcodeUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DrinkTypeBarcodePayload>
+        }
+        aggregate: {
+          args: Prisma.DrinkTypeBarcodeAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateDrinkTypeBarcode>
+        }
+        groupBy: {
+          args: Prisma.DrinkTypeBarcodeGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.DrinkTypeBarcodeGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.DrinkTypeBarcodeCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.DrinkTypeBarcodeCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -1182,6 +1257,17 @@ export const DrinkTypeScalarFieldEnum = {
 } as const
 
 export type DrinkTypeScalarFieldEnum = (typeof DrinkTypeScalarFieldEnum)[keyof typeof DrinkTypeScalarFieldEnum]
+
+
+export const DrinkTypeBarcodeScalarFieldEnum = {
+  id: 'id',
+  barcode: 'barcode',
+  type_id: 'type_id',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type DrinkTypeBarcodeScalarFieldEnum = (typeof DrinkTypeBarcodeScalarFieldEnum)[keyof typeof DrinkTypeBarcodeScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -1435,6 +1521,7 @@ export type GlobalOmitConfig = {
   drinkLog?: Prisma.DrinkLogOmit
   drinkBrand?: Prisma.DrinkBrandOmit
   drinkType?: Prisma.DrinkTypeOmit
+  drinkTypeBarcode?: Prisma.DrinkTypeBarcodeOmit
 }
 
 /* Types for Logging */

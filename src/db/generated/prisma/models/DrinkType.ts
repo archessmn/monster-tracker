@@ -237,6 +237,7 @@ export type DrinkTypeWhereInput = {
   createdAt?: Prisma.DateTimeFilter<"DrinkType"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"DrinkType"> | Date | string
   brand?: Prisma.XOR<Prisma.DrinkBrandScalarRelationFilter, Prisma.DrinkBrandWhereInput>
+  barcodes?: Prisma.DrinkTypeBarcodeListRelationFilter
 }
 
 export type DrinkTypeOrderByWithRelationInput = {
@@ -248,6 +249,7 @@ export type DrinkTypeOrderByWithRelationInput = {
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   brand?: Prisma.DrinkBrandOrderByWithRelationInput
+  barcodes?: Prisma.DrinkTypeBarcodeOrderByRelationAggregateInput
 }
 
 export type DrinkTypeWhereUniqueInput = Prisma.AtLeast<{
@@ -262,6 +264,7 @@ export type DrinkTypeWhereUniqueInput = Prisma.AtLeast<{
   createdAt?: Prisma.DateTimeFilter<"DrinkType"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"DrinkType"> | Date | string
   brand?: Prisma.XOR<Prisma.DrinkBrandScalarRelationFilter, Prisma.DrinkBrandWhereInput>
+  barcodes?: Prisma.DrinkTypeBarcodeListRelationFilter
 }, "id">
 
 export type DrinkTypeOrderByWithAggregationInput = {
@@ -300,6 +303,7 @@ export type DrinkTypeCreateInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   brand: Prisma.DrinkBrandCreateNestedOneWithoutTypesInput
+  barcodes?: Prisma.DrinkTypeBarcodeCreateNestedManyWithoutTypeInput
 }
 
 export type DrinkTypeUncheckedCreateInput = {
@@ -310,6 +314,7 @@ export type DrinkTypeUncheckedCreateInput = {
   brand_id: string
   createdAt?: Date | string
   updatedAt?: Date | string
+  barcodes?: Prisma.DrinkTypeBarcodeUncheckedCreateNestedManyWithoutTypeInput
 }
 
 export type DrinkTypeUpdateInput = {
@@ -320,6 +325,7 @@ export type DrinkTypeUpdateInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   brand?: Prisma.DrinkBrandUpdateOneRequiredWithoutTypesNestedInput
+  barcodes?: Prisma.DrinkTypeBarcodeUpdateManyWithoutTypeNestedInput
 }
 
 export type DrinkTypeUncheckedUpdateInput = {
@@ -330,6 +336,7 @@ export type DrinkTypeUncheckedUpdateInput = {
   brand_id?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  barcodes?: Prisma.DrinkTypeBarcodeUncheckedUpdateManyWithoutTypeNestedInput
 }
 
 export type DrinkTypeCreateManyInput = {
@@ -411,6 +418,11 @@ export type DrinkTypeSumOrderByAggregateInput = {
   total_ml?: Prisma.SortOrder
 }
 
+export type DrinkTypeScalarRelationFilter = {
+  is?: Prisma.DrinkTypeWhereInput
+  isNot?: Prisma.DrinkTypeWhereInput
+}
+
 export type DrinkTypeCreateNestedManyWithoutBrandInput = {
   create?: Prisma.XOR<Prisma.DrinkTypeCreateWithoutBrandInput, Prisma.DrinkTypeUncheckedCreateWithoutBrandInput> | Prisma.DrinkTypeCreateWithoutBrandInput[] | Prisma.DrinkTypeUncheckedCreateWithoutBrandInput[]
   connectOrCreate?: Prisma.DrinkTypeCreateOrConnectWithoutBrandInput | Prisma.DrinkTypeCreateOrConnectWithoutBrandInput[]
@@ -461,6 +473,20 @@ export type IntFieldUpdateOperationsInput = {
   divide?: number
 }
 
+export type DrinkTypeCreateNestedOneWithoutBarcodesInput = {
+  create?: Prisma.XOR<Prisma.DrinkTypeCreateWithoutBarcodesInput, Prisma.DrinkTypeUncheckedCreateWithoutBarcodesInput>
+  connectOrCreate?: Prisma.DrinkTypeCreateOrConnectWithoutBarcodesInput
+  connect?: Prisma.DrinkTypeWhereUniqueInput
+}
+
+export type DrinkTypeUpdateOneRequiredWithoutBarcodesNestedInput = {
+  create?: Prisma.XOR<Prisma.DrinkTypeCreateWithoutBarcodesInput, Prisma.DrinkTypeUncheckedCreateWithoutBarcodesInput>
+  connectOrCreate?: Prisma.DrinkTypeCreateOrConnectWithoutBarcodesInput
+  upsert?: Prisma.DrinkTypeUpsertWithoutBarcodesInput
+  connect?: Prisma.DrinkTypeWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.DrinkTypeUpdateToOneWithWhereWithoutBarcodesInput, Prisma.DrinkTypeUpdateWithoutBarcodesInput>, Prisma.DrinkTypeUncheckedUpdateWithoutBarcodesInput>
+}
+
 export type DrinkTypeCreateWithoutBrandInput = {
   id?: string
   name: string
@@ -468,6 +494,7 @@ export type DrinkTypeCreateWithoutBrandInput = {
   total_ml: number
   createdAt?: Date | string
   updatedAt?: Date | string
+  barcodes?: Prisma.DrinkTypeBarcodeCreateNestedManyWithoutTypeInput
 }
 
 export type DrinkTypeUncheckedCreateWithoutBrandInput = {
@@ -477,6 +504,7 @@ export type DrinkTypeUncheckedCreateWithoutBrandInput = {
   total_ml: number
   createdAt?: Date | string
   updatedAt?: Date | string
+  barcodes?: Prisma.DrinkTypeBarcodeUncheckedCreateNestedManyWithoutTypeInput
 }
 
 export type DrinkTypeCreateOrConnectWithoutBrandInput = {
@@ -518,6 +546,62 @@ export type DrinkTypeScalarWhereInput = {
   updatedAt?: Prisma.DateTimeFilter<"DrinkType"> | Date | string
 }
 
+export type DrinkTypeCreateWithoutBarcodesInput = {
+  id?: string
+  name: string
+  caffeine_100ml: number
+  total_ml: number
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  brand: Prisma.DrinkBrandCreateNestedOneWithoutTypesInput
+}
+
+export type DrinkTypeUncheckedCreateWithoutBarcodesInput = {
+  id?: string
+  name: string
+  caffeine_100ml: number
+  total_ml: number
+  brand_id: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type DrinkTypeCreateOrConnectWithoutBarcodesInput = {
+  where: Prisma.DrinkTypeWhereUniqueInput
+  create: Prisma.XOR<Prisma.DrinkTypeCreateWithoutBarcodesInput, Prisma.DrinkTypeUncheckedCreateWithoutBarcodesInput>
+}
+
+export type DrinkTypeUpsertWithoutBarcodesInput = {
+  update: Prisma.XOR<Prisma.DrinkTypeUpdateWithoutBarcodesInput, Prisma.DrinkTypeUncheckedUpdateWithoutBarcodesInput>
+  create: Prisma.XOR<Prisma.DrinkTypeCreateWithoutBarcodesInput, Prisma.DrinkTypeUncheckedCreateWithoutBarcodesInput>
+  where?: Prisma.DrinkTypeWhereInput
+}
+
+export type DrinkTypeUpdateToOneWithWhereWithoutBarcodesInput = {
+  where?: Prisma.DrinkTypeWhereInput
+  data: Prisma.XOR<Prisma.DrinkTypeUpdateWithoutBarcodesInput, Prisma.DrinkTypeUncheckedUpdateWithoutBarcodesInput>
+}
+
+export type DrinkTypeUpdateWithoutBarcodesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  caffeine_100ml?: Prisma.IntFieldUpdateOperationsInput | number
+  total_ml?: Prisma.IntFieldUpdateOperationsInput | number
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  brand?: Prisma.DrinkBrandUpdateOneRequiredWithoutTypesNestedInput
+}
+
+export type DrinkTypeUncheckedUpdateWithoutBarcodesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  caffeine_100ml?: Prisma.IntFieldUpdateOperationsInput | number
+  total_ml?: Prisma.IntFieldUpdateOperationsInput | number
+  brand_id?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
 export type DrinkTypeCreateManyBrandInput = {
   id?: string
   name: string
@@ -534,6 +618,7 @@ export type DrinkTypeUpdateWithoutBrandInput = {
   total_ml?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  barcodes?: Prisma.DrinkTypeBarcodeUpdateManyWithoutTypeNestedInput
 }
 
 export type DrinkTypeUncheckedUpdateWithoutBrandInput = {
@@ -543,6 +628,7 @@ export type DrinkTypeUncheckedUpdateWithoutBrandInput = {
   total_ml?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  barcodes?: Prisma.DrinkTypeBarcodeUncheckedUpdateManyWithoutTypeNestedInput
 }
 
 export type DrinkTypeUncheckedUpdateManyWithoutBrandInput = {
@@ -555,6 +641,35 @@ export type DrinkTypeUncheckedUpdateManyWithoutBrandInput = {
 }
 
 
+/**
+ * Count Type DrinkTypeCountOutputType
+ */
+
+export type DrinkTypeCountOutputType = {
+  barcodes: number
+}
+
+export type DrinkTypeCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  barcodes?: boolean | DrinkTypeCountOutputTypeCountBarcodesArgs
+}
+
+/**
+ * DrinkTypeCountOutputType without action
+ */
+export type DrinkTypeCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the DrinkTypeCountOutputType
+   */
+  select?: Prisma.DrinkTypeCountOutputTypeSelect<ExtArgs> | null
+}
+
+/**
+ * DrinkTypeCountOutputType without action
+ */
+export type DrinkTypeCountOutputTypeCountBarcodesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.DrinkTypeBarcodeWhereInput
+}
+
 
 export type DrinkTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -565,6 +680,8 @@ export type DrinkTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArg
   createdAt?: boolean
   updatedAt?: boolean
   brand?: boolean | Prisma.DrinkBrandDefaultArgs<ExtArgs>
+  barcodes?: boolean | Prisma.DrinkType$barcodesArgs<ExtArgs>
+  _count?: boolean | Prisma.DrinkTypeCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["drinkType"]>
 
 export type DrinkTypeSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -602,6 +719,8 @@ export type DrinkTypeSelectScalar = {
 export type DrinkTypeOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "caffeine_100ml" | "total_ml" | "brand_id" | "createdAt" | "updatedAt", ExtArgs["result"]["drinkType"]>
 export type DrinkTypeInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   brand?: boolean | Prisma.DrinkBrandDefaultArgs<ExtArgs>
+  barcodes?: boolean | Prisma.DrinkType$barcodesArgs<ExtArgs>
+  _count?: boolean | Prisma.DrinkTypeCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type DrinkTypeIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   brand?: boolean | Prisma.DrinkBrandDefaultArgs<ExtArgs>
@@ -614,6 +733,7 @@ export type $DrinkTypePayload<ExtArgs extends runtime.Types.Extensions.InternalA
   name: "DrinkType"
   objects: {
     brand: Prisma.$DrinkBrandPayload<ExtArgs>
+    barcodes: Prisma.$DrinkTypeBarcodePayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1018,6 +1138,7 @@ readonly fields: DrinkTypeFieldRefs;
 export interface Prisma__DrinkTypeClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
   brand<T extends Prisma.DrinkBrandDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.DrinkBrandDefaultArgs<ExtArgs>>): Prisma.Prisma__DrinkBrandClient<runtime.Types.Result.GetResult<Prisma.$DrinkBrandPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  barcodes<T extends Prisma.DrinkType$barcodesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.DrinkType$barcodesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$DrinkTypeBarcodePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1452,6 +1573,30 @@ export type DrinkTypeDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Int
    * Limit how many DrinkTypes to delete.
    */
   limit?: number
+}
+
+/**
+ * DrinkType.barcodes
+ */
+export type DrinkType$barcodesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the DrinkTypeBarcode
+   */
+  select?: Prisma.DrinkTypeBarcodeSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the DrinkTypeBarcode
+   */
+  omit?: Prisma.DrinkTypeBarcodeOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.DrinkTypeBarcodeInclude<ExtArgs> | null
+  where?: Prisma.DrinkTypeBarcodeWhereInput
+  orderBy?: Prisma.DrinkTypeBarcodeOrderByWithRelationInput | Prisma.DrinkTypeBarcodeOrderByWithRelationInput[]
+  cursor?: Prisma.DrinkTypeBarcodeWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.DrinkTypeBarcodeScalarFieldEnum | Prisma.DrinkTypeBarcodeScalarFieldEnum[]
 }
 
 /**

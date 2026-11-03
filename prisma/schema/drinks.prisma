@@ -21,8 +21,23 @@ model DrinkType {
   brand_id String
   brand    DrinkBrand @relation(fields: [brand_id], references: [id])
 
+  barcodes DrinkTypeBarcode[]
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt()
 
   @@map("drink_types")
+}
+
+model DrinkTypeBarcode {
+  id      String @id @default(cuid(2))
+  barcode String @unique
+
+  type_id String
+  type    DrinkType @relation(fields: [type_id], references: [id])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt()
+
+  @@map("drink_types_barcodes")
 }

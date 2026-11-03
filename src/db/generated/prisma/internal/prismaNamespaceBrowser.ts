@@ -58,7 +58,8 @@ export const ModelName = {
   Apikey: 'Apikey',
   DrinkLog: 'DrinkLog',
   DrinkBrand: 'DrinkBrand',
-  DrinkType: 'DrinkType'
+  DrinkType: 'DrinkType',
+  DrinkTypeBarcode: 'DrinkTypeBarcode'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -204,6 +205,17 @@ export const DrinkTypeScalarFieldEnum = {
 } as const
 
 export type DrinkTypeScalarFieldEnum = (typeof DrinkTypeScalarFieldEnum)[keyof typeof DrinkTypeScalarFieldEnum]
+
+
+export const DrinkTypeBarcodeScalarFieldEnum = {
+  id: 'id',
+  barcode: 'barcode',
+  type_id: 'type_id',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type DrinkTypeBarcodeScalarFieldEnum = (typeof DrinkTypeBarcodeScalarFieldEnum)[keyof typeof DrinkTypeBarcodeScalarFieldEnum]
 
 
 export const SortOrder = {

@@ -1,6 +1,7 @@
 import { createCallerFactory, createTRPCRouter } from "@/server/api/trpc";
 
 import { apiKeysRouter } from "./routers/apiKeys";
+import { drinkBarcodesRouter } from "./routers/drinkBarcodes";
 import { drinkBrandsRouter } from "./routers/drinkBrands";
 import { drinkLogsRouter } from "./routers/drinkLogs";
 import { drinkTypesRouter } from "./routers/drinkTypes";
@@ -14,6 +15,7 @@ import { utilRouter } from "./routers/util";
 export const appRouter = createTRPCRouter({
   util: utilRouter,
   apiKeys: apiKeysRouter,
+  drinkBarcodes: drinkBarcodesRouter,
   drinkBrands: drinkBrandsRouter,
   drinkLogs: drinkLogsRouter,
   drinkTypes: drinkTypesRouter,
