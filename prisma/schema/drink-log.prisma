@@ -2,8 +2,8 @@ model DrinkLog {
   id        String   @id @default(cuid(2))
   barcode   String
   datetime  DateTime @default(now())
-  latitude  Int?
-  longitude Int?
+  latitude  Float?
+  longitude Float?
 
   user_id String
   user    User   @relation(fields: [user_id], references: [id])

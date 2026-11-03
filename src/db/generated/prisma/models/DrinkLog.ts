@@ -239,8 +239,8 @@ export type DrinkLogWhereInput = {
   id?: Prisma.StringFilter<"DrinkLog"> | string
   barcode?: Prisma.StringFilter<"DrinkLog"> | string
   datetime?: Prisma.DateTimeFilter<"DrinkLog"> | Date | string
-  latitude?: Prisma.IntNullableFilter<"DrinkLog"> | number | null
-  longitude?: Prisma.IntNullableFilter<"DrinkLog"> | number | null
+  latitude?: Prisma.FloatNullableFilter<"DrinkLog"> | number | null
+  longitude?: Prisma.FloatNullableFilter<"DrinkLog"> | number | null
   user_id?: Prisma.StringFilter<"DrinkLog"> | string
   createdAt?: Prisma.DateTimeFilter<"DrinkLog"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"DrinkLog"> | Date | string
@@ -266,8 +266,8 @@ export type DrinkLogWhereUniqueInput = Prisma.AtLeast<{
   NOT?: Prisma.DrinkLogWhereInput | Prisma.DrinkLogWhereInput[]
   barcode?: Prisma.StringFilter<"DrinkLog"> | string
   datetime?: Prisma.DateTimeFilter<"DrinkLog"> | Date | string
-  latitude?: Prisma.IntNullableFilter<"DrinkLog"> | number | null
-  longitude?: Prisma.IntNullableFilter<"DrinkLog"> | number | null
+  latitude?: Prisma.FloatNullableFilter<"DrinkLog"> | number | null
+  longitude?: Prisma.FloatNullableFilter<"DrinkLog"> | number | null
   user_id?: Prisma.StringFilter<"DrinkLog"> | string
   createdAt?: Prisma.DateTimeFilter<"DrinkLog"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"DrinkLog"> | Date | string
@@ -297,8 +297,8 @@ export type DrinkLogScalarWhereWithAggregatesInput = {
   id?: Prisma.StringWithAggregatesFilter<"DrinkLog"> | string
   barcode?: Prisma.StringWithAggregatesFilter<"DrinkLog"> | string
   datetime?: Prisma.DateTimeWithAggregatesFilter<"DrinkLog"> | Date | string
-  latitude?: Prisma.IntNullableWithAggregatesFilter<"DrinkLog"> | number | null
-  longitude?: Prisma.IntNullableWithAggregatesFilter<"DrinkLog"> | number | null
+  latitude?: Prisma.FloatNullableWithAggregatesFilter<"DrinkLog"> | number | null
+  longitude?: Prisma.FloatNullableWithAggregatesFilter<"DrinkLog"> | number | null
   user_id?: Prisma.StringWithAggregatesFilter<"DrinkLog"> | string
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"DrinkLog"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"DrinkLog"> | Date | string
@@ -330,8 +330,8 @@ export type DrinkLogUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   barcode?: Prisma.StringFieldUpdateOperationsInput | string
   datetime?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  latitude?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  longitude?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  latitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  longitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   user?: Prisma.UserUpdateOneRequiredWithoutDrink_logsNestedInput
@@ -341,8 +341,8 @@ export type DrinkLogUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   barcode?: Prisma.StringFieldUpdateOperationsInput | string
   datetime?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  latitude?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  longitude?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  latitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  longitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   user_id?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -363,8 +363,8 @@ export type DrinkLogUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   barcode?: Prisma.StringFieldUpdateOperationsInput | string
   datetime?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  latitude?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  longitude?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  latitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  longitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -373,8 +373,8 @@ export type DrinkLogUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   barcode?: Prisma.StringFieldUpdateOperationsInput | string
   datetime?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  latitude?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  longitude?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  latitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  longitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   user_id?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -475,6 +475,14 @@ export type DrinkLogUncheckedUpdateManyWithoutUserNestedInput = {
   deleteMany?: Prisma.DrinkLogScalarWhereInput | Prisma.DrinkLogScalarWhereInput[]
 }
 
+export type NullableFloatFieldUpdateOperationsInput = {
+  set?: number | null
+  increment?: number
+  decrement?: number
+  multiply?: number
+  divide?: number
+}
+
 export type DrinkLogCreateWithoutUserInput = {
   id?: string
   barcode: string
@@ -528,8 +536,8 @@ export type DrinkLogScalarWhereInput = {
   id?: Prisma.StringFilter<"DrinkLog"> | string
   barcode?: Prisma.StringFilter<"DrinkLog"> | string
   datetime?: Prisma.DateTimeFilter<"DrinkLog"> | Date | string
-  latitude?: Prisma.IntNullableFilter<"DrinkLog"> | number | null
-  longitude?: Prisma.IntNullableFilter<"DrinkLog"> | number | null
+  latitude?: Prisma.FloatNullableFilter<"DrinkLog"> | number | null
+  longitude?: Prisma.FloatNullableFilter<"DrinkLog"> | number | null
   user_id?: Prisma.StringFilter<"DrinkLog"> | string
   createdAt?: Prisma.DateTimeFilter<"DrinkLog"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"DrinkLog"> | Date | string
@@ -549,8 +557,8 @@ export type DrinkLogUpdateWithoutUserInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   barcode?: Prisma.StringFieldUpdateOperationsInput | string
   datetime?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  latitude?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  longitude?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  latitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  longitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -559,8 +567,8 @@ export type DrinkLogUncheckedUpdateWithoutUserInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   barcode?: Prisma.StringFieldUpdateOperationsInput | string
   datetime?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  latitude?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  longitude?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  latitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  longitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -569,8 +577,8 @@ export type DrinkLogUncheckedUpdateManyWithoutUserInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   barcode?: Prisma.StringFieldUpdateOperationsInput | string
   datetime?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  latitude?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  longitude?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  latitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  longitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -1076,8 +1084,8 @@ export interface DrinkLogFieldRefs {
   readonly id: Prisma.FieldRef<"DrinkLog", 'String'>
   readonly barcode: Prisma.FieldRef<"DrinkLog", 'String'>
   readonly datetime: Prisma.FieldRef<"DrinkLog", 'DateTime'>
-  readonly latitude: Prisma.FieldRef<"DrinkLog", 'Int'>
-  readonly longitude: Prisma.FieldRef<"DrinkLog", 'Int'>
+  readonly latitude: Prisma.FieldRef<"DrinkLog", 'Float'>
+  readonly longitude: Prisma.FieldRef<"DrinkLog", 'Float'>
   readonly user_id: Prisma.FieldRef<"DrinkLog", 'String'>
   readonly createdAt: Prisma.FieldRef<"DrinkLog", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"DrinkLog", 'DateTime'>
