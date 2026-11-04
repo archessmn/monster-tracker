@@ -58,6 +58,12 @@ export function AppLayout(props: { children: ReactNode }) {
             label={"Home"}
           />
           <NavLink
+            active={pathname === "/map"}
+            component={Link}
+            href={"/map"}
+            label={"Map"}
+          />
+          <NavLink
             active={pathname === "/account/logs"}
             component={Link}
             href={"/account/logs"}
