@@ -33,7 +33,7 @@ export function AppLayout(props: { children: ReactNode }) {
         }}
         padding="md"
       >
-        <AppShell.Header>
+        <AppShell.Header zIndex={10001}>
           <Group h="100%" px="md">
             <Burger
               hiddenFrom="sm"
@@ -50,7 +50,7 @@ export function AppLayout(props: { children: ReactNode }) {
             <Text>{session.data?.session && session.data.user.name}</Text>
           </Group>
         </AppShell.Header>
-        <AppShell.Navbar p="md">
+        <AppShell.Navbar p="md" zIndex={10000}>
           <NavLink
             active={pathname === "/"}
             component={Link}
