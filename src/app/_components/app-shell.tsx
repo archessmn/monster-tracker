@@ -1,21 +1,18 @@
 "use client";
 
-import { AppShell, Burger, Button, Group, NavLink, Text } from "@mantine/core";
+import { AppShell, Burger, Button, Group, Text } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { QueryClientProvider, useQueryClient } from "@tanstack/react-query";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
 
+import { ColorSchemeToggle } from "@/app/_components/color-scheme-toggle";
+import { NavbarLink, NavbarProvider } from "@/app/_components/navbar-link";
+import { UserCard } from "@/app/_components/user-card";
 import { authClient } from "@/server/auth/client";
 
-import { ColorSchemeToggle } from "./color-scheme-toggle";
-import { UserCard } from "./user-card";
-
 export function AppLayout(props: { children: ReactNode }) {
-  const pathname = usePathname();
-
-  const [mobileOpened, { toggle: toggleMobile }] = useDisclosure();
+  const [mobileOpened, { toggle: toggleMobile, close: closeMobile }] =
+    useDisclosure();
   const [desktopOpened, { toggle: toggleDesktop }] = useDisclosure(true);
 
   const queryClient = useQueryClient();
@@ -51,36 +48,13 @@ export function AppLayout(props: { children: ReactNode }) {
           </Group>
         </AppShell.Header>
         <AppShell.Navbar p="md" zIndex={10000}>
-          <NavLink
-            active={pathname === "/"}
-            component={Link}
-            href={"/"}
-            label={"Home"}
-          />
-          <NavLink
-            active={pathname === "/map"}
-            component={Link}
-            href={"/map"}
-            label={"Map"}
-          />
-          <NavLink
-            active={pathname === "/account/logs"}
-            component={Link}
-            href={"/account/logs"}
-            label={"Scan History"}
-          />
-          <NavLink
-            active={pathname === "/account/settings"}
-            component={Link}
-            href={"/account/settings"}
-            label={"Profile"}
-          />
-          <NavLink
-            active={pathname === "/admin"}
-            component={Link}
-            href={"/admin"}
-            label={"Admin"}
-          />
+          <NavbarProvider onNavigate={closeMobile}>
+            <NavbarLink href={"/"} label={"Home"} />
+            <NavbarLink href={"/map"} label={"Map"} />
+            <NavbarLink href={"/account/logs"} label={"Scan History"} />
+            <NavbarLink href={"/account/settings"} label={"Profile"} />
+            <NavbarLink href={"/admin"} label={"Admin"} />
+          </NavbarProvider>
           {!session.data?.session ? (
             <Button
               mt={"auto"}
