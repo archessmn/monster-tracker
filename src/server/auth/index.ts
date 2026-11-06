@@ -16,5 +16,12 @@ export const auth = betterAuth({
       clientSecret: env.BETTER_AUTH_GITHUB_SECRET!,
     },
   },
-  plugins: [admin(), apiKey()],
+  plugins: [
+    admin(),
+    apiKey({
+      rateLimit: {
+        enabled: false,
+      },
+    }),
+  ],
 });
