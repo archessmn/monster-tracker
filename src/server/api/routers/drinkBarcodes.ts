@@ -34,6 +34,27 @@ export const drinkBarcodesRouter = createTRPCRouter({
     return drinkTypeBarcodes;
   }),
 
+  listMissingLinksAdmin: adminProcedure.query(async ({ ctx }) => {
+    const allDrinkTypeBarcodes = await ctx.db.drinkTypeBarcode.findMany({
+      orderBy: {
+        barcode: "asc",
+      },
+      select: {
+        barcode: true,
+      },
+    });
+
+    const missingDrinkTypes = await ctx.db.drinkLog.findMany({
+      where: {
+        barcode: {
+          notIn: allDrinkTypeBarcodes.map((v) => v.barcode),
+        },
+      },
+    });
+
+    return missingDrinkTypes;
+  }),
+
   create: adminProcedure
     .input(
       z.object({
